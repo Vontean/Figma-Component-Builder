@@ -1,0 +1,5 @@
+interface:
+  display_name: "VT Component Builder"
+  short_description: "按 token、结构与文档契约构建或迁移 Figma 组件库组件"
+policy:
+  allow_implicit_invocation: false

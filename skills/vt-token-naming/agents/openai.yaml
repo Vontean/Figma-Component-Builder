@@ -1,0 +1,4 @@
+interface:
+  display_name: "VT Token Naming"
+  short_description: "命名和评审分层 design token"
+  default_prompt: "使用 $vt-token-naming 创建或评审分层 design token 名称，并在需要时处理 Figma Variable path。"
