@@ -7,17 +7,17 @@
 ### 1. 确认目标与链接
 
 - 默认写入 `COMPONENT_SET`；没有 Component Set 的独立 `COMPONENT` 才写入该组件。不要写入 Set 内的 variant、实例或页面。
-- 读取当前项目的 Description contract，以及本次确实存在的 Annotation、Dynamic Font、Responsive Layout 等文档板块。
+- 读取当前项目的 Description contract、Guideline 中的使用原则或交互规则，以及本次确实存在且与组件相关的文档板块。
 - 已确认的组件 Guideline 页面或板块链接优先从 `@data/links.csv` 读取；没有记录时使用本次任务提供或确认的链接。
 - `documentationLinks` 是否使用、指向页面根节点还是其他目标，以项目 contract 为准。
 
 ### 2. 组织内容
 
-按当前项目 contract 选择区块与顺序。一个常见 contract 是 `Scenario` → `Note` → `Accessibility` → `Responsive`：
+按当前项目 contract 选择区块与顺序。只加入当前 Guideline 确实存在且与组件相关的板块；`Measurements`、`Motion` 等不是固定必备区块。一个常见 contract 是 `Scenario` → `Note` → `Accessibility` → `Responsive`：
 
 | 区块 | 写入条件 | 内容 |
 | --- | --- | --- |
-| `Scenario` | 需要简短使用说明。 | 组件用途和典型使用语境。 |
+| `Scenario` | 需要简短使用说明。 | 说明何时使用；同一家族有多个 type 时，写清各自触发条件和相邻类型的选择边界。内容从已确认 Guideline 的使用原则或交互规则提炼。 |
 | `Note` | 有 Property 无法表达的特殊交互。 | 该交互行为。 |
 | `Accessibility` | 对应 Guideline 板块已存在。 | Annotation、Dynamic Font 等精确链接。 |
 | `Responsive` | 对应 Guideline 板块已存在。 | Layout 等精确链接。 |
@@ -73,7 +73,7 @@ target.documentationLinks = [{
 回读目标节点，确认：
 
 - 目标类型正确，字段顺序符合项目 contract。
-- `descriptionMarkdown` 已保存为规范化后的 Markdown，所有链接均定位到已确认节点。
+- `descriptionMarkdown` 已保存为规范化后的 Markdown；Scenario 可区分同一家族各 type 的使用时机，所有链接均来自实际读取并确认的页面或 section。
 - 使用 `documentationLinks` 时，其链接指向已确认页面或目标节点。
 - UI 未显示或未更新时，重新 publish 目标节点后复查。
 
