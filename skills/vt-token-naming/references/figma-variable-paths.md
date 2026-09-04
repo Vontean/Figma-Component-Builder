@@ -10,6 +10,20 @@ Slash path ↔ public name
 
 无法唯一还原 segment 或组织 Group 时，先询问，不猜测。读取时保留文件已有 path；创建时读取同一 token family 的既有组织，或要求设计师确认。
 
+## Variable 完整性门禁
+
+每个本次创建或修改的 Variable，在写入后、交付前逐项回读确认：
+
+1. 公开名与 stored slash path 通过本文件的双向回环校验。
+2. `resolvedType` 与该 token 的设计职责匹配。
+3. 每个 mode 都有正确的 value 或 alias；alias 的目标存在且类型匹配。
+4. `description` 同时包含中文和英文，并准确说明该 token 的职责。
+5. `codeSyntax` 的 `WEB`、`ANDROID`、`iOS` 均已填写，并遵循目标文件同类 token 的既有语法。
+6. `scopes` 与 token 类型、组件职责及目标文件既有 scope 规则一致。
+7. 回读 Variable 的名称、path、type、全部 mode value/alias、description、三端 codeSyntax 与 scopes；每一项均与写入意图一致。
+
+完成条件：本次范围内每个 Variable 的七项均已回读通过；任一字段缺少项目约定时，先读取同类 Variable，仍无法确定则请设计师确认。
+
 ## Reference
 
 Brand 通常来自 mode。公开名去掉 brand 前缀后的部分是 foundation leaf；slash path 的上层 segment 只负责组织。

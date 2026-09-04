@@ -53,9 +53,9 @@ disable-model-invocation: true
 
 - 仅当任务明确要求，且设计师已确认矩阵不存在或需更新时，才创建或维护该组件的 token 矩阵；保留项目既有的列结构。
 - 在组件库文件创建或复用矩阵所需的 `Component Token`，并按项目约定建立 alias；Typography 与 Shadow recipe 绑定相应 Style。
-- 对矩阵与 Variables 执行 reference 定义的命名、mode、scope、raw value 例外与回读验证。
+- 对矩阵与 Variables 执行 reference 定义的命名、mode、scope、raw value 例外与回读验证；每个新建或修改的 Variable 必须通过 `vt-token-naming` 的 Variable 完整性门禁。
 
-完成条件：矩阵和 Token/Style 的对应关系可追溯，且本次组件所需基础已验证。
+完成条件：矩阵和 Token/Style 的对应关系可追溯；本次新建或修改的每个 Variable 已通过 Variable 完整性门禁；本次组件所需基础已验证。
 
 ### 3. 组件搭建
 

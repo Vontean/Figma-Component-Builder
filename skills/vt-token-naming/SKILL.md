@@ -34,6 +34,6 @@ description: 命名或评审 Reference、System、Component token；当任务读
 
 4. 默认只给一个推荐名。只有存在真实语义歧义时，最多给两个备选并说明差异。
 
-5. 仅当任务要求读取或创建 Figma Variables 时，再读取 [references/figma-variable-paths.md](references/figma-variable-paths.md)，同时给出公开名和 slash path。
+5. 仅当任务要求读取或创建 Figma Variables 时，再读取 [references/figma-variable-paths.md](references/figma-variable-paths.md)，同时处理公开名、slash path 与 Variable 完整性门禁。
 
-完成标准：名称符合对应层公式、大小写和项目词表，且每个保留词都用于区分含义；Figma 分支还必须通过双向回环校验。
+完成标准：名称符合对应层公式、大小写和项目词表，且每个保留词都用于区分含义；Figma 分支还必须通过公开名/slash path 双向回环及 Variable 完整性门禁。
